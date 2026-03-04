@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympus Gym - Supera i Tuoi Limiti</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, #fbbf24, #f59e0b);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3);
+        }
+
+        /* Padding per evitare che il contenuto finisca sotto il banner fisso */
+        .content-wrapper {
+            padding-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Banner Informativo -->
+    <div class="fixed top-0 w-full bg-yellow-500 text-black text-[10px] md:text-xs py-1.5 text-center font-bold uppercase tracking-widest z-[100] shadow-lg">
+        Sito esempio, alcune funzionalità potrebbero non funzionare
+    </div>
+
+    <!-- Pulsante Torna alla Home (Posizionato sopra a sinistra) -->
+    <div class="fixed top-10 left-4 z-[60] md:left-8">
+        <a href="index.html" class="flex items-center gap-2 glass px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-white/10 transition border-white/20">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            <span>Torna alla home</span>
+        </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass py-4 mt-8 transition-all duration-300" id="main-nav">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="text-2xl font-black tracking-tighter italic ml-0 md:ml-32 lg:ml-40">OLYMPUS<span class="text-yellow-500">GYM</span></div>
+            <div class="hidden md:flex space-x-8 font-medium uppercase text-sm tracking-widest">
+                <a href="#home" class="hover:text-yellow-500 transition">Home</a>
+                <a href="#storia" class="hover:text-yellow-500 transition">Storia</a>
+                <a href="#piani" class="hover:text-yellow-500 transition">Abbonamenti</a>
+                <a href="#dove" class="hover:text-yellow-500 transition">Dove Trovarci</a>
+                <a href="#contatti" class="hover:text-yellow-500 transition">Contatti</a>
+            </div>
+            <button class="md:hidden" id="menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="content-wrapper">
+        <!-- Hero Section -->
+        <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=2070" 
+                     alt="Sfondo Palestra" 
+                     class="w-full h-full object-cover opacity-40">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent"></div>
+            </div>
+            
+            <div class="container mx-auto px-6 relative z-10 text-center">
+                <h1 class="text-6xl md:text-8xl font-black mb-6 leading-tight uppercase italic">
+                    Scolpisci la tua <br><span class="text-gradient">Migliore Versione</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-400 mb-10 max-w-2xl mx-auto">
+                    Non è solo fitness. È una trasformazione totale. Unisciti all'elite del movimento.
+                </p>
+                <div class="flex flex-col md:flex-row justify-center gap-4">
+                    <a href="#piani" class="btn-primary px-10 py-4 rounded-full font-bold uppercase tracking-wider text-black">Inizia Ora</a>
+                    <a href="#storia" class="glass px-10 py-4 rounded-full font-bold uppercase tracking-wider hover:bg-white/10 transition">Scopri di più</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- La Nostra Storia -->
+        <section id="storia" class="py-24 bg-[#0a0a0a]">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-16">
+                    <div class="md:w-1/2">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&q=80&w=1000" 
+                                 alt="Storia della Palestra" 
+                                 class="rounded-3xl shadow-2xl">
+                            <div class="absolute -bottom-6 -right-6 glass p-8 rounded-2xl hidden lg:block">
+                                <span class="text-4xl font-black text-yellow-500">15+</span>
+                                <p class="text-sm uppercase font-bold text-gray-400">Anni di Esperienza</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <h2 class="text-4xl font-black mb-6 uppercase italic">La Nostra <span class="text-yellow-500">Storia</span></h2>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            Nata nel 2008 in un piccolo garage, Olympus Gym è diventata il punto di riferimento per chi cerca eccellenza tecnica e risultati reali. La nostra missione è sempre stata chiara: fornire un ambiente stimolante dove la forza di volontà incontra la scienza dell'allenamento.
+                        </p>
+                        <p class="text-gray-400 leading-relaxed mb-8">
+                            Oggi contiamo oltre 2000 metri quadri di attrezzature all'avanguardia e un team di coach certificati pronti a guidarti in ogni singolo sollevamento.
+                        </p>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle" class="text-yellow-500"></i>
+                                <span class="font-bold">Coach Certificati</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle" class="text-yellow-500"></i>
+                                <span class="font-bold">Attrezzi High-End</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle" class="text-yellow-500"></i>
+                                <span class="font-bold">Aperti 24/7</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check-circle" class="text-yellow-500"></i>
+                                <span class="font-bold">Area Relax & Spa</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Piani di Abbonamento -->
+        <section id="piani" class="py-24 bg-[#111111]">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-black mb-16 uppercase italic">Scegli il tuo <span class="text-yellow-500">Piano</span></h2>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Basic -->
+                    <div class="glass p-10 rounded-3xl hover:border-yellow-500/50 transition group">
+                        <h3 class="text-xl font-bold mb-4 uppercase">Starter</h3>
+                        <div class="text-5xl font-black mb-6">€29<span class="text-lg text-gray-500 font-normal">/mese</span></div>
+                        <ul class="text-left space-y-4 mb-10 text-gray-400">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-yellow-500"></i> Accesso Sala Pesi</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-yellow-500"></i> Spogliatoi & Docce</li>
+                            <li class="flex items-center gap-2 text-gray-600"><i data-lucide="x" class="w-5 h-5"></i> Corsi di Gruppo</li>
+                            <li class="flex items-center gap-2 text-gray-600"><i data-lucide="x" class="w-5 h-5"></i> Area Spa</li>
+                        </ul>
+                        <button class="w-full py-4 rounded-xl font-bold uppercase border border-gray-700 group-hover:bg-white group-hover:text-black transition">Seleziona</button>
+                    </div>
+
+                    <!-- Pro -->
+                    <div class="relative p-10 rounded-3xl bg-yellow-500 text-black transform md:scale-110 shadow-2xl">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-black text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Più Popolare</div>
+                        <h3 class="text-xl font-bold mb-4 uppercase italic">Elite Pro</h3>
+                        <div class="text-5xl font-black mb-6">€49<span class="text-lg text-black/60 font-normal">/mese</span></div>
+                        <ul class="text-left space-y-4 mb-10">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5"></i> Accesso Illimitato 24/7</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5"></i> Tutti i Corsi Inclusi</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5"></i> 1 Sessione Personal Trainer</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5"></i> Area Spa & Sauna</li>
+                        </ul>
+                        <button class="w-full py-4 rounded-xl font-bold uppercase bg-black text-white hover:bg-gray-900 transition shadow-lg">Inizia Ora</button>
+                    </div>
+
+                    <!-- Platinum -->
+                    <div class="glass p-10 rounded-3xl hover:border-yellow-500/50 transition group">
+                        <h3 class="text-xl font-bold mb-4 uppercase">Platinum</h3>
+                        <div class="text-5xl font-black mb-6">€89<span class="text-lg text-gray-500 font-normal">/mese</span></div>
+                        <ul class="text-left space-y-4 mb-10 text-gray-400">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-yellow-500"></i> Tutto l'abbonamento Pro</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-yellow-500"></i> Personal Trainer Dedicato</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-yellow-500"></i> Piano Nutrizionale</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-yellow-500"></i> Accesso Guest Gratuito</li>
+                        </ul>
+                        <button class="w-full py-4 rounded-xl font-bold uppercase border border-gray-700 group-hover:bg-white group-hover:text-black transition">Seleziona</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dove Trovarci -->
+        <section id="dove" class="py-24 bg-[#0a0a0a]">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row gap-12 items-center">
+                    <div class="md:w-1/2">
+                        <h2 class="text-4xl font-black mb-8 uppercase italic">Dove <span class="text-yellow-500">Trovarci</span></h2>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="bg-yellow-500/10 p-3 rounded-lg"><i data-lucide="map-pin" class="text-yellow-500"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-xl">Sede Centrale</h4>
+                                    <p class="text-gray-400">Via dell'Acciaio, 42 - 00100 Roma (RM)</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="bg-yellow-500/10 p-3 rounded-lg"><i data-lucide="phone" class="text-yellow-500"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-xl">Telefono</h4>
+                                    <p class="text-gray-400">+39 06 123 456 78</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="bg-yellow-500/10 p-3 rounded-lg"><i data-lucide="clock" class="text-yellow-500"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-xl">Orari</h4>
+                                    <p class="text-gray-400">Lunedì - Domenica: 24/24h</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 w-full h-[400px] rounded-3xl overflow-hidden glass relative">
+                        <!-- Placeholder per mappa -->
+                        <div class="absolute inset-0 bg-gray-800 flex flex-col items-center justify-center text-center p-8">
+                            <i data-lucide="map" class="w-16 h-16 text-yellow-500/20 mb-4"></i>
+                            <p class="text-gray-500">Mappa interattiva caricata qui</p>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&q=80&w=1000" 
+                             alt="Mappa Posizione" 
+                             class="w-full h-full object-cover opacity-30">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contatti -->
+        <section id="contatti" class="py-24 bg-zinc-950">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto glass p-12 rounded-[2rem]">
+                    <div class="text-center mb-12">
+                        <h2 class="text-4xl font-black uppercase italic mb-4">Mettiti in <span class="text-yellow-500">Contatto</span></h2>
+                        <p class="text-gray-400">Hai domande? Scrivici e ti risponderemo entro 24 ore.</p>
+                    </div>
+                    
+                    <form id="contact-form" class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Nome Completo</label>
+                            <input type="text" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-500 transition" placeholder="Mario Rossi">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Email</label>
+                            <input type="email" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-500 transition" placeholder="mario@esempio.com">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Messaggio</label>
+                            <textarea rows="4" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-500 transition" placeholder="Come possiamo aiutarti?"></textarea>
+                        </div>
+                        <div class="md:col-span-2 text-center mt-4">
+                            <button type="button" onclick="handleSubmit()" class="btn-primary px-12 py-4 rounded-full font-bold uppercase tracking-widest text-black w-full md:w-auto">Invia Messaggio</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-12 border-t border-white/5">
+            <div class="container mx-auto px-6 flex flex-col md:row justify-between items-center gap-8">
+                <div class="text-2xl font-black italic">OLYMPUS<span class="text-yellow-500">GYM</span></div>
+                <div class="flex gap-6">
+                    <a href="#" class="text-gray-500 hover:text-white transition"><i data-lucide="instagram"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-white transition"><i data-lucide="facebook"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-white transition"><i data-lucide="youtube"></i></a>
+                </div>
+                <p class="text-gray-600 text-sm">© 2024 Olympus Gym. Tutti i diritti riservati.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Notifiche Custom -->
+    <div id="notification" class="fixed bottom-10 right-10 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none z-[100]">
+        <div class="glass border-yellow-500/50 p-4 rounded-xl flex items-center gap-3">
+            <i data-lucide="check-circle" class="text-yellow-500"></i>
+            <span id="notif-text">Messaggio inviato con successo!</span>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        function showNotification(text) {
+            const notif = document.getElementById('notification');
+            const notifText = document.getElementById('notif-text');
+            notifText.innerText = text;
+            notif.classList.remove('translate-y-20', 'opacity-0');
+            notif.classList.add('translate-y-0', 'opacity-100');
+            
+            setTimeout(() => {
+                notif.classList.add('translate-y-20', 'opacity-0');
+                notif.classList.remove('translate-y-0', 'opacity-100');
+            }, 3000);
+        }
+
+        function handleSubmit() {
+            showNotification("Grazie! Ti ricontatteremo a breve.");
+            document.getElementById('contact-form').reset();
+        }
+
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2', 'bg-black/95');
+                nav.classList.remove('py-4', 'glass');
+            } else {
+                nav.classList.remove('py-2', 'bg-black/95');
+                nav.classList.add('py-4', 'glass');
+            }
+        });
+    </script>
+</body>
+</html>
